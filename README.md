@@ -1,64 +1,109 @@
-# Australia Renewable Energy Forecasting
+Project Overview
+Duration: [Insert timeframe - e.g., September 2024 - January 2025]
+Role: Data Analyst | Researcher
+Tools: Power BI Desktop, Excel, Power Query, DAX
+Industry: Energy & Sustainability
+Problem Statement
+The Australian government required comprehensive analysis of renewable energy adoption trends to inform policy decisions and track progress toward 2030 sustainability goals.
+Methodology
+1. Data Collection & Sources
 
-This repository contains my **Power BI project** analyzing and forecasting renewable energy trends in Australia. The project focuses on visualizing historical data, understanding energy contributions, and predicting future trends for various renewable energy sources.  
+Australian Energy Statistics (Government database)
+International energy databases (New Zealand, Papua New Guinea, Indonesia)
+Global Renewable Power Sector Targets database
+Multiple fiscal year datasets from regional authorities
 
+2. ETL Process
 
-##  Project Overview
+Extracted data from 8+ separate sources (Excel, HTML tables)
+Cleaned and standardized inconsistent formats across datasets
+Created calculated columns for renewable/non-renewable classification
+Merged datasets using fiscal year and country as keys
+Transformed wide-format data to long-format for analysis
 
-The project explores renewable energy generation in Australia, including:
+3. Data Modeling
 
-- **Bagasse wood**  
-- **Biogas**  
-- **Geothermal**  
-- **Hydro**  
-- **Solar**  
-- **Wind**  
+Designed star schema with fact and dimension tables
+Created relationships: Dim_Date, Dim_Country, Dim_Energy_Source
+Established one-to-many and one-to-one relationships
+Optimized for query performance
 
-The interactive dashboards allow users to:
+4. Analysis & Visualization
 
-- View energy generation **by year**  
-- Filter and analyze **by energy scale** (small, medium, large)  
-- Compare energy production **by state**  
-- **Forecast renewable energy production up to 2030**  
-- Compare Australia’s renewable energy trends with **neighboring countries**  
-- **Navigate per section:** Press **Alt + Left Click** on any visual to focus on that section  
+Developed 15+ DAX measures for dynamic calculations
+Created 4 comprehensive dashboard pages answering key business questions
+Built interactive visualizations: line charts, 100% stacked columns, gauge charts, matrix tables
+Implemented filters and slicers for user exploration
 
-These dashboards provide insights into historical trends, comparisons, and future projections for Australia's renewable energy sector.
+Key Findings
+1. Overall Growth
 
----
+Renewable energy: 9.34% (2005-06) → 33.92% (2022-23)
+328% increase over 18 years
 
-##  Files Included
+2. Energy Source Transformation
 
-- `Australia_Renewable_Energy.pbix` – Power BI Desktop file with interactive dashboards  
-- `Australia_Renewable_Energy.pdf` – Exported version of the dashboards for easy viewing  
-- `README.md` – Project description  
+Hydro: Declined from 73.72% to 17.90% of renewable mix
+Solar: Exploded from 0.42% to 45.07% (dominant source)
+Wind: Projected to be largest contributor by 2030 (40.04%)
 
----
+3. Regional Comparison
 
-##  Key Skills Demonstrated
+Australia surpassed Indonesia by 2015
+Matched New Zealand's strong performance
+Overtook Papua New Guinea around 2021
 
-- Data visualization and storytelling in **Power BI**  
-- Time series analysis and forecasting through 2030  
-- Comparative analysis by **state, scale, and neighboring countries**  
-- Designing **interactive dashboards** for actionable insights  
+4. 2030 Forecast
 
----
+Target: 82.64% renewable energy
+Gap from current: 48.72%
+Wind energy will lead the transition
 
-##  How to View
+Technical Implementation
+Power Query Transformations:
 
-- **Interactive:** Open the `.pbix` file in Power BI Desktop  
-  - **Tip:** Press **Alt + Left Click** on visuals to drill into specific sections  
-- **Static Preview:** View the PDF file for an overview of dashboards  
+16 transformation steps per dataset
+Custom conditional columns for categorization
+Unpivoting for analysis-ready format
+Date parsing and standardization
 
----
+DAX Measures Examples:
+% Renewable Energy = 
+DIVIDE(
+    CALCULATE(SUM('AUS FY'[Value(GWh)]), 
+              'AUS FY'[Renewable] = "Renewable Fuel"),
+    CALCULATE(SUM('AUS FY'[Value(GWh)]), 
+              ALL('AUS FY'[Renewable]))
+)
+Visualizations Created:
 
-##  Purpose
+3 KPI cards with dynamic titles
+4 line charts for trend analysis
+2 matrix tables with conditional formatting
+2 100% stacked column charts
+1 gauge chart comparing current vs. target
+1 donut chart for energy mix
 
-This project is part of my professional portfolio, showcasing my skills in:
+Business Value
 
-- **Data analysis**  
-- **Visualization**  
-- **Forecasting**  
+Policy Impact: Insights inform government renewable energy strategy
+Investment Guidance: Identifies growth opportunities in solar and wind
+Performance Tracking: Monitors progress toward 2030 targets
+Regional Benchmarking: Contextualizes Australia's performance
 
-Applied to real-world renewable energy data in Australia.
+Challenges Overcome
 
+Integrating inconsistent data formats across multiple sources
+Handling missing values and data quality issues
+Creating meaningful comparisons across different measurement systems
+Balancing detail with usability in dashboard design
+
+Skills Demonstrated
+✅ Business Intelligence & Analytics
+✅ Data Cleaning & ETL
+✅ Advanced DAX & Power Query M-Code
+✅ Data Modeling & Optimization
+✅ Statistical Analysis & Forecasting
+✅ Data Visualization Best Practices
+✅ Stakeholder Communication
+✅ Project Documentation
