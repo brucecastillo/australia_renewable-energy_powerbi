@@ -1,10 +1,14 @@
 Project Overview
-Duration: [Insert timeframe - e.g., September 2024 - January 2025]
+Duration: July - September 2024
+
 Role: Data Analyst | Researcher
 Tools: Power BI Desktop, Excel, Power Query, DAX
 Industry: Energy & Sustainability
+
+
 Problem Statement
 The Australian government required comprehensive analysis of renewable energy adoption trends to inform policy decisions and track progress toward 2030 sustainability goals.
+
 Methodology
 1. Data Collection & Sources
 
@@ -98,12 +102,12 @@ Handling missing values and data quality issues
 Creating meaningful comparisons across different measurement systems
 Balancing detail with usability in dashboard design
 
-Skills Demonstrated
-✅ Business Intelligence & Analytics
-✅ Data Cleaning & ETL
-✅ Advanced DAX & Power Query M-Code
-✅ Data Modeling & Optimization
-✅ Statistical Analysis & Forecasting
-✅ Data Visualization Best Practices
-✅ Stakeholder Communication
-✅ Project Documentation
+Skills Demonstrated:
+Business Intelligence & Analytics
+Data Cleaning & ETL
+Advanced DAX & Power Query M-Code
+Data Modeling & Optimization
+Statistical Analysis & Forecasting
+Data Visualization Best Practices
+Stakeholder Communication
+Project Documentation
